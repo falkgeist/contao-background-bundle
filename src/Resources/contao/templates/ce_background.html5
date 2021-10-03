@@ -1,0 +1,6 @@
+<div class="ce_background">
+  <?= $this->text; ?>
+  <?php if ($this->url): ?>
+    <a href="<?= $this->url; ?>">Read more...</a>
+  <?php endif; ?>
+</div>

@@ -1,0 +1,23 @@
+{
+    "name": "falkgeist/contao-background-bundle",
+    "type": "contao-bundle",
+    "description": "This bundle provides solutions for using background images and colors in Contao 4 and also provides CSS-only parallax effects.",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Falk von Freigeist",
+            "email": "admin@falkvonfreigeist.com"
+        }
+    ],
+    "require": {
+        "contao/core-bundle": "^4.9"
+    },
+    "extra": {
+         "contao-manager-plugin": "Falkgeist\\ContaoBackgroundBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+      "psr-4": {
+        "Falkgeist\\ContaoBackgroundBundle\\": "src/"
+      }
+    }
+}
