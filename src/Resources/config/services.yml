@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autoconfigure: true
+    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundController:
+        arguments:
+            - '@contao.framework'
+        tags:
+            - { name: contao.content_element, category: media, template: ce_background, type: background }
+        public: true

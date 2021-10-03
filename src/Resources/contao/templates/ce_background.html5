@@ -1,6 +1,14 @@
-<div class="ce_background">
-  <?= $this->text; ?>
-  <?php if ($this->url): ?>
-    <a href="<?= $this->url; ?>">Read more...</a>
-  <?php endif; ?>
+<div class="<?= $this->class ?> block"<?= $this->cssID ?>>
+    <?php if($this->bgType == 'bg_color'): ?>
+    <?= $this->bgColor?'Farbe '.$this->bgColor.' wurde gewählt':'Keine Farbe'; ?>
+    <?php elseif($this->bgType == 'bg_image'): ?>
+    <?= $this->singleSRC?'Bild wurde hinzugefügt:':'Kein Bild'; ?>
+    <?php
+        $objFile = \FilesModel::findByUuid($this->singleSRC);
+        $strPath = $objFile->path;
+        echo '<img src="'.$strPath.'">'
+    ?>
+    <br>
+    <?= $this->addParallax?'Parallax wurde aktiviert':'Kein Parallax' ?>
+    <?php endif; ?>
 </div>
