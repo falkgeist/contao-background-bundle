@@ -19,7 +19,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BackgroundController extends AbstractContentElementController
+class BackgroundEndController extends AbstractContentElementController
 {
     public function __construct(ContaoFramework $framework)
     {
@@ -27,9 +27,6 @@ class BackgroundController extends AbstractContentElementController
     }
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-        $template->text = $model->text;
-        $template->url = $model->url;
-
         return $template->getResponse();
     }
 }

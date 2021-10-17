@@ -1,0 +1,15 @@
+<div class="<?= str_replace('ce_background_start', 'ce_background',  $this->class) ?> block"<?= $this->cssID ?> style="min-height: <?= $this->height; ?><?= $this->unit ?>;">
+    <style>
+        .bg-<?=$this->id?> {
+        <?php if($this->bgType == 'bg_color'): ?>
+            background-color: <?=$this->bgColor?>
+            <?php elseif($this->bgType == 'bg_image'): ?>
+            <?php
+                $objFile = \FilesModel::findByUuid($this->singleSRC);
+                $strPath = $objFile->path;
+            ?>
+            background-image: url(<?=$strPath?>);
+        <?php endif; ?>
+        }
+    </style>
+    <div class="bg-<?=$this->id?><?=($this->bgType == 'bg_image')?' bg-image':''?><?=($this->bgType == 'bg_color')?' bg-color':'' ?><?=$this->addParallax?' bg-parallax':''?>" ></div>

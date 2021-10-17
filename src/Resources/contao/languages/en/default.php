@@ -8,4 +8,5 @@
 * @link https://github.com/falkgeist/contao-background-bundle
 */
 
-$GLOBALS['TL_LANG']['CTE']['background'] = ['Background', 'Backgroundimage/-color'];
+$GLOBALS['TL_LANG']['CTE']['background_start'] = ['Background (Start)', 'Backgroundimage/-color'];
+$GLOBALS['TL_LANG']['CTE']['background_end'] = ['Background (End)', 'Backgroundimage/-color'];

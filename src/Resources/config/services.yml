@@ -1,9 +1,15 @@
 services:
     _defaults:
         autoconfigure: true
-    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundController:
+    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundStartController:
         arguments:
             - '@contao.framework'
         tags:
-            - { name: contao.content_element, category: media, template: ce_background, type: background }
+            - { name: contao.content_element, category: media, template: ce_background_start, type: background_start }
+        public: true
+    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundEndController:
+        arguments:
+            - '@contao.framework'
+        tags:
+            - { name: contao.content_element, category: media, template: ce_background_end, type: background_end }
         public: true

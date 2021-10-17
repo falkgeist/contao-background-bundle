@@ -8,11 +8,20 @@
  * @link https://github.com/falkgeist/contao-background-bundle
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['background'] = '{type_legend},type;{background_legend),bgType;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+// remove '%' from units, since it is not working
+$units = $GLOBALS['TL_CSS_UNITS'];
+unset($units[1]);
+$units = array_values($units);
+
+$GLOBALS['TL_DCA']['tl_content']['palettes']['background_start'] = '{type_legend},type;{background_legend),bgType,minHeight;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['background_end'] = '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'bgType';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addParallax';
+// TODO: Add parallax
+//$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addParallax';
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_color'] = 'bgColor';
-$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC, addParallax';
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC';
+// TODO: Add parallax
+//$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC, addParallax';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['bgType'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_content']['bgType'],
@@ -20,7 +29,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bgType'] = [
     'inputType' => 'select',
     'options'   => ['bg_image', 'bg_color'],
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['bgTypeOptions'],
-    'eval'      => ['includeBlankOption' => true, 'submitOnChange' => true, 'tl_class' => 'w50 wizard'],
+    'eval'      => ['includeBlankOption' => false, 'submitOnChange' => true, 'tl_class' => 'w50 wizard'],
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
 
@@ -32,10 +41,20 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bgColor'] = [
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['addParallax'] = array(
-    'label'     => &$GLOBALS['TL_LANG']['tl_content']['addParallax'],
+$GLOBALS['TL_DCA']['tl_content']['fields']['minHeight'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_content']['minHeight'],
     'exclude'   => true,
-    'inputType' => 'checkbox',
-    'eval'      => array('tl_class' => 'w50 wizard'),
-    'sql'       => "char(1) NOT NULL default ''",
-);
+    'inputType' => 'inputUnit',
+    'options'   => $units,
+    'eval'      => ['includeBlankOption'=>true, 'rgxp'=>'digit_auto_inherit', 'maxlength' => 20, 'tl_class'=>'clr w50'],
+    'sql'       => "varchar(255) NOT NULL default ''",
+];
+
+// TODO: Add parallax
+//$GLOBALS['TL_DCA']['tl_content']['fields']['addParallax'] = array(
+//    'label'     => &$GLOBALS['TL_LANG']['tl_content']['addParallax'],
+//    'exclude'   => true,
+//    'inputType' => 'checkbox',
+//    'eval'      => array('tl_class' => 'w50 wizard'),
+//    'sql'       => "char(1) NOT NULL default ''",
+//);
