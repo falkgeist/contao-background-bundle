@@ -29,7 +29,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bgType'] = [
     'inputType' => 'select',
     'options'   => ['bg_image', 'bg_color'],
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['bgTypeOptions'],
-    'eval'      => ['includeBlankOption' => false, 'submitOnChange' => true, 'tl_class' => 'w50 wizard'],
+    'eval'      => ['includeBlankOption' => true, 'submitOnChange' => true, 'tl_class' => 'w50 wizard'],
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
 

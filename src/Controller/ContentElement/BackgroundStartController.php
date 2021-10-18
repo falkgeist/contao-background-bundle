@@ -27,7 +27,7 @@ class BackgroundStartController extends AbstractContentElementController
     }
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-        $GLOBALS['TL_CSS'][] = 'bundles/contaobackgroundbundle/background.css';
+        $GLOBALS['TL_CSS'][] = 'bundles/contaobackground/background.css';
         $minHeight = unserialize($model->minHeight);
 
         $template->unit = $minHeight['unit'];
