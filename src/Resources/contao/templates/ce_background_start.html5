@@ -1,14 +1,14 @@
-<div class="<?= str_replace('ce_background_start', 'ce_background',  $this->class) ?> block"<?= $this->cssID ?> style="min-height: <?= $this->height; ?><?= $this->unit ?>;">
+<div class="<?= str_replace('ce_background_start', 'ce_background',  $this->class) ?> block"<?= $this->cssID ?> <?php if($this->height && $this->unit): ?>style="min-height: <?= $this->height; ?><?= $this->unit ?>;"<?php endif; ?>>
     <style>
         .bg-<?=$this->id?> {
         <?php if($this->bgType == 'bg_color'): ?>
             background-color: <?=$this->bgColor?>
-            <?php elseif($this->bgType == 'bg_image'): ?>
+        <?php elseif($this->bgType == 'bg_image'): ?>
             <?php
                 $objFile = \FilesModel::findByUuid($this->singleSRC);
                 $strPath = $objFile->path;
             ?>
-            background-image: url(<?=$strPath?>);
+            background-image: url(<?="/".$strPath?>);
         <?php endif; ?>
         }
     </style>
