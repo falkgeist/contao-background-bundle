@@ -54,7 +54,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['verticalAlign'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_content']['verticalAlign'],
     'exclude'   => true,
     'inputType' => 'select',
-    'options'   => ['top', 'center', 'bottom'],
+    'options'   => ['top', '25%', 'center', '75%', 'bottom'],
     'eval'      => ['includeBlankOption'=>true, 'tl_class'=>'clr w50'],
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
@@ -63,7 +63,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['horizontalAlign'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_content']['horizontalAlign'],
     'exclude'   => true,
     'inputType' => 'select',
-    'options'   => ['left', 'center', 'right'],
+    'options'   => ['left', '25%', 'center', '75%', 'right'],
     'eval'      => ['includeBlankOption'=>true, 'tl_class'=>'w50'],
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
