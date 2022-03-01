@@ -2,7 +2,7 @@
     <style>
         .bg-<?=$this->id?> {
         <?php if($this->bgType == 'bg_color'): ?>
-            background-color: <?=$this->bgColor?>
+            background-color: #<?=$this->bgColor?>
         <?php elseif($this->bgType == 'bg_image'): ?>
             <?php
                 $objFile = \FilesModel::findByUuid($this->singleSRC);
