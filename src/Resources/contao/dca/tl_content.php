@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'bgType';
 // TODO: Add parallax
 //$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addParallax';
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_color'] = 'bgColor';
-$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC';
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC,verticalAlign,horizontalAlign';
 // TODO: Add parallax
 //$GLOBALS['TL_DCA']['tl_content']['subpalettes']['bgType_bg_image'] = 'singleSRC, addParallax';
 
@@ -47,6 +47,24 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['minHeight'] = [
     'inputType' => 'inputUnit',
     'options'   => $units,
     'eval'      => ['includeBlankOption'=>true, 'rgxp'=>'digit_auto_inherit', 'maxlength' => 20, 'tl_class'=>'clr w50'],
+    'sql'       => "varchar(255) NOT NULL default ''",
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['verticalAlign'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_content']['verticalAlign'],
+    'exclude'   => true,
+    'inputType' => 'select',
+    'options'   => ['top', 'center', 'bottom'],
+    'eval'      => ['includeBlankOption'=>true, 'tl_class'=>'clr w50'],
+    'sql'       => "varchar(255) NOT NULL default ''",
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['horizontalAlign'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_content']['horizontalAlign'],
+    'exclude'   => true,
+    'inputType' => 'select',
+    'options'   => ['left', 'center', 'right'],
+    'eval'      => ['includeBlankOption'=>true, 'tl_class'=>'w50'],
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
 

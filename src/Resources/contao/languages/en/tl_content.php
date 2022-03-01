@@ -15,3 +15,5 @@ $GLOBALS['TL_LANG']['tl_content']['bgTypeOptions']['bg_image'] = 'Image';
 $GLOBALS['TL_LANG']['tl_content']['bgColor'] = ['Background color', 'Please enter desired background color as hex code (no \'#\').'];
 $GLOBALS['TL_LANG']['tl_content']['addParallax'] = ['Activate Parallax', 'The image will not move on scroll'];
 $GLOBALS['TL_LANG']['tl_content']['minHeight'] = ['Background height', 'Please enter desired minimum background height.'];
+$GLOBALS['TL_LANG']['tl_content']['horizontalAlign'] = ['Horizontal alignment', 'Please select the desired horizontal alignment.'];
+$GLOBALS['TL_LANG']['tl_content']['verticalAlign'] = ['Vertical alignment', 'Please select the desired vertical alignment.'];
