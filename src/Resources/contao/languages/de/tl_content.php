@@ -15,3 +15,5 @@ $GLOBALS['TL_LANG']['tl_content']['bgTypeOptions']['bg_image'] = 'Bild';
 $GLOBALS['TL_LANG']['tl_content']['bgColor'] = ['Hintergrundfarbe', 'Bitte die gewünschte Hintergrundfarbe als Hexcode angeben (ohne \'#\').'];
 $GLOBALS['TL_LANG']['tl_content']['addParallax'] = ['Parallax aktivieren', 'Das Bild steht beim Scrollen fest.'];
 $GLOBALS['TL_LANG']['tl_content']['minHeight'] = ['Hintergrundhöhe', 'Bitte Hintergrundhöhe angeben, die mindestens erreicht werden soll.'];
+$GLOBALS['TL_LANG']['tl_content']['horizontalAlign'] = ['Horizontale Ausrichtung', 'Bitte die gewünschte horizontale Ausrichtung auswählen.'];
+$GLOBALS['TL_LANG']['tl_content']['verticalAlign'] = ['Vertikale Ausrichtung', 'Bitte die gewünschte vertikale Ausrichtung auswählen.'];

@@ -10,6 +10,12 @@
             ?>
             background-image: url(<?="/".$strPath?>);
         <?php endif; ?>
+        <?php if($this->horizontalAlign): ?>
+            background-position-x: <?=$this->horizontalAlign?>;
+        <?php endif; ?>
+        <?php if($this->verticalAlign): ?>
+            background-position-y: <?=$this->verticalAlign?>;
+        <?php endif; ?>
         }
     </style>
     <div class="bg-<?=$this->id?><?=($this->bgType == 'bg_image')?' bg-image':''?><?=($this->bgType == 'bg_color')?' bg-color':'' ?><?=$this->addParallax?' bg-parallax':''?>" ></div>
