@@ -12,9 +12,16 @@
         <?php endif; ?>
         <?php if($this->horizontalAlign): ?>
             background-position-x: <?=$this->horizontalAlign?>;
+        <?php elseif($this->verticalAlign): ?>
+            background-position-x: center;
         <?php endif; ?>
         <?php if($this->verticalAlign): ?>
             background-position-y: <?=$this->verticalAlign?>;
+        <?php elseif($this->horizontalAlign): ?>
+            background-position-y: center;
+        <?php endif; ?>
+        <?php if(!$this->horizontalAlign && !$this->verticalAlign): ?>
+            background-position: center;
         <?php endif; ?>
         }
     </style>
