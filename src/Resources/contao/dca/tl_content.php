@@ -14,7 +14,7 @@ unset($units[1]);
 $units = array_values($units);
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['background_start'] = '{type_legend},type;{background_legend),bgType,minHeight;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['background_end'] = '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['background_stop'] = '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'bgType';
 // TODO: Add parallax
 //$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addParallax';
