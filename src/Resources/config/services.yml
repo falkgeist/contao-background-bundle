@@ -7,7 +7,7 @@ services:
         tags:
             - { name: contao.content_element, category: media, template: ce_background_start, type: background_start }
         public: true
-    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundEndController:
+    Falkgeist\ContaoBackgroundBundle\Controller\ContentElement\BackgroundStopController:
         arguments:
             - '@contao.framework'
         tags:
