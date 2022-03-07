@@ -11,5 +11,5 @@ services:
         arguments:
             - '@contao.framework'
         tags:
-            - { name: contao.content_element, category: media, template: ce_background_end, type: background_end }
+            - { name: contao.content_element, category: media, template: ce_background_stop, type: background_stop }
         public: true
